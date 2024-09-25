@@ -3,7 +3,7 @@ import 'package:task_manager/UI/screens/cancelled_task_screen.dart';
 import 'package:task_manager/UI/screens/completed_screen.dart';
 import 'package:task_manager/UI/screens/in_progress_screen.dart';
 import 'package:task_manager/UI/screens/new_task_screen.dart';
-import 'package:task_manager/UI/utility/app_colors.dart';
+//import 'package:task_manager/UI/utility/app_colors.dart';
 import 'package:task_manager/UI/widgets/profile_app_bar.dart';
 
 class MainBottomNavigationBar extends StatefulWidget{
@@ -34,7 +34,36 @@ class MainBottomNavigationBarState extends State<MainBottomNavigationBar>{
     return Scaffold(
       appBar: profileAppBar(context),
       body: _screens[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: Colors.grey.shade200,
+        //surfaceTintColor: Colors.green,
+        selectedIndex: _selectedIndex,
+        onDestinationSelected: (index){
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        destinations: [
+          NavigationDestination(
+              icon: Icon(Icons.abc_outlined),
+              label: 'New'
+          ),
+          NavigationDestination(
+              icon: Icon(Icons.done_all_outlined),
+              label: 'Completed'
+          ),
+          NavigationDestination(
+              icon: Icon(Icons.ac_unit_outlined),
+              label: 'In Progress'
+          ),
+          NavigationDestination(
+              icon: Icon(Icons.cancel_outlined),
+              label: 'Cancelled'
+          )
+      ],
+      ),
+
+      /*bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index){
           _selectedIndex = index;
@@ -54,6 +83,10 @@ class MainBottomNavigationBarState extends State<MainBottomNavigationBar>{
           BottomNavigationBarItem(icon:Icon(Icons.close),label: 'Cancelled'),
         ],
       ),
+    );
+
+       */
+
     );
   }
 
