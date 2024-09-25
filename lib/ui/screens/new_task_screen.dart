@@ -82,11 +82,9 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
           ),
         ),
       ),
-
-
       floatingActionButton: FloatingActionButton(
         onPressed: _onTapAddButton,
-        backgroundColor: Colors.purpleAccent.withOpacity(0.4),
+        backgroundColor: Colors.brown.shade200,
         foregroundColor: Colors.black,
         child: const Icon(Icons.add),
 
