@@ -37,8 +37,6 @@ class _TaskItemState extends State<TaskItem>{
     'Cancelled'
   ];
 
-
-
   @override
   void initState(){
     super.initState();
@@ -50,7 +48,7 @@ class _TaskItemState extends State<TaskItem>{
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      color: Colors.grey.withOpacity(0.7),
+      color: Colors.green.withOpacity(0.3),
       child:  ListTile(
         title: Text(widget.taskModel.title ?? '',style:const TextStyle(
           ),),
@@ -192,10 +190,6 @@ Future<void> _getUpdateTaskStatus(String status)async{
 
 
 }
-
-
-
-
 
 
 
